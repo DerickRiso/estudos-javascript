@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitação</title>
+</head>
+<body>
+    <button onclick="inicio()">Clique para começar</button>
+
+    <script>
+        function inicio() {
+            let nome = window.prompt('Qual é seu nome?')
+            // Prompt cria uma caixa de alerta com um espaço para inserção de dados, valor é passado para variavel nome
+            window.alert(`Olá, ${nome}! é um prazer te conhecer!`)
+            // Usamos crases nas strings com variáveis (template string)
+        }
+    </script>
+</body>
+</html>
