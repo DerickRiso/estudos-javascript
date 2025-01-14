@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos primitivos</title>
+</head>
+<body>
+    <h1 id="titulo">Veja o tipo do dado das variáveis:</h1>
+    <p id="tipo">Descubra o tipo!</p>
+
+    <button onclick="verTipo(nome)">Nome</button>
+    <button onclick="verTipo(numero)">Número</button>
+    <button onclick="verTipo(valor)">Valor</button>
+    
+
+    <script>
+        let nome = "Derick" // String
+        let numero = 5      // Numero
+        let valor = true    // booleano
+        function verTipo(t) {
+            document.getElementById("tipo").innerHTML = `O tipo da variável é: ${typeof t}`
+        }
+    </script>
+</body>
+</html>
