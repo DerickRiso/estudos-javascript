@@ -12,10 +12,15 @@
         function inicio() {
             // Entrada de dados armazenada na variável nome
             let nome = window.prompt('Qual é seu nome?')
-            // Prompt cria uma caixa de alerta com um espaço para inserção de dados, valor é passado para variavel nome
-            window.alert(`Olá, ${nome}! é um prazer te conhecer!`)
-            // Usamos crases nas strings com variáveis (template string)
+            window.alert('Olá! É um prazer te conhecer! ' + nome)   // concatenação
+            
         }
+        let n1 = Number(window.prompt("Insira um número: "))
+        let n2 = Number(window.prompt("Insira outro número: "))
+        let s = n1 + n2
+        window.alert("A soma dos valores é: " + String(s))
+        // (number + number) = adição
+        // (string + string) = concatenação
     </script>
 </body>
 </html>
