@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            background-color: rgb(187, 187, 187);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 20px 40px;
+            font-size: 1.5em;
+        }
+
+        div#botoes {
+            margin-top: 30px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculo">
+        <h1>Escolha uma operação:</h1>
+        <input type="number" id="num1">
+        <span id="operacao"></span>
+        <input type="number" id="num2">
+    </div>
+    
+    <div id="botoes">
+        <button class="op" id="soma">+</button>
+        <button class="op" id="subtracao">-</button>
+        <button class="op" id="multiplicacao">x</button>
+        <button class="op" id="divisao">/</button>
+    </div>
+    <button id="resultado">Calcular</button>
+    
+
+
+    <script>
+        // Adicionando disparos de evento
+        var som = document.getElementById("soma")
+        var sub = document.getElementById("subtracao")
+        var mult = document.getElementById("multiplicacao")
+        var divi = document.getElementById("divisao")
+        var res = document.getElementById("resultado")
+
+        som.addEventListener('click', somar)
+        sub.addEventListener('click', subtrair)
+        mult.addEventListener('click', multiplicar)
+        divi.addEventListener('click', dividir)
+        res.addEventListener('click', calcular)
+
+        // Mudar sinal da operação
+        var sinal = document.getElementById("operacao")
+
+        var fator1 = document.getElementById("num1")
+        var fator2 = document.getElementById("num2") 
+          
+        var op = 0
+         
+
+        // Operações
+        function somar() {
+            sinal.innerHTML = "+"
+            op = 1
+            return op
+        }
+
+        function subtrair() {
+            sinal.innerHTML = "-"
+            op = 2
+            return op
+        }
+
+        function multiplicar() {
+            sinal.innerHTML = "X"
+            op = 3
+            return op
+        }
+
+        function dividir() {
+            sinal.innerHTML = "/"
+            op = 4
+            return op
+        }
+
+        function calcular() {
+            var resultado = 0
+            if(op == 1) {
+                resultado = fator1.value + fator2.value
+                alert(resultado)
+            }
+        }
+    </script>
+</body>
+</html>
