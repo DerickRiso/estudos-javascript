@@ -49,13 +49,13 @@
 
 
     <script>
-        // Adicionando disparos de evento
+        // Guardando botões em variáveis
         var som = document.getElementById("soma")
         var sub = document.getElementById("subtracao")
         var mult = document.getElementById("multiplicacao")
         var divi = document.getElementById("divisao")
         var res = document.getElementById("resultado")
-
+        // Adicionando disparos de evento
         som.addEventListener('click', somar)
         sub.addEventListener('click', subtrair)
         mult.addEventListener('click', multiplicar)
@@ -65,33 +65,30 @@
         // Mudar sinal da operação
         var sinal = document.getElementById("operacao")
 
+        // Guardando valor do input em variáveis
         var fator1 = document.getElementById("num1")
         var fator2 = document.getElementById("num2")
-       
         var op = 0
          
-
         // Operações
         function somar() {
             sinal.innerHTML = "+"
             op = 1
         }
-
         function subtrair() {
             sinal.innerHTML = "-"
             op = 2
         }
-
         function multiplicar() {
             sinal.innerHTML = "X"
             op = 3
         }
-
         function dividir() {
             sinal.innerHTML = "/"
             op = 4
         }
-
+        
+        // Função de calculo
         function calcular() {
             // Conversão de string para number
             var num1 = Number(fator1.value)
@@ -100,18 +97,18 @@
             // Verificação de operação
             if(op == 1) {
                 resultado = num1 + num2
-                alert(resultado)
+                alert(`O resultado é: ${resultado}`)
             } else if(op == 2) {
                 resultado = num1 - num2
-                alert(resultado)
+                alert(`O resultado é: ${resultado}`)
             } else if(op == 3) {
                 resultado = num1 * num2
-                alert(resultado)
+                alert(`O resultado é: ${resultado}`)
             } else if((num1 == 0 || num2 == 0) && op == 4) {
                 alert("Erro. Divisão por 0")
             } else if(op == 4) {
                 resultado = num1 / num2
-                alert(resultado)   
+                alert(`O resultado é: ${resultado}`)   
             } else {
                 alert("Faça um calculo!")
             }
