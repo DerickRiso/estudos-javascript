@@ -66,8 +66,8 @@
         var sinal = document.getElementById("operacao")
 
         var fator1 = document.getElementById("num1")
-        var fator2 = document.getElementById("num2") 
-          
+        var fator2 = document.getElementById("num2")
+       
         var op = 0
          
 
@@ -75,32 +75,45 @@
         function somar() {
             sinal.innerHTML = "+"
             op = 1
-            return op
         }
 
         function subtrair() {
             sinal.innerHTML = "-"
             op = 2
-            return op
         }
 
         function multiplicar() {
             sinal.innerHTML = "X"
             op = 3
-            return op
         }
 
         function dividir() {
             sinal.innerHTML = "/"
             op = 4
-            return op
         }
 
         function calcular() {
+            // Conversão de string para number
+            var num1 = Number(fator1.value)
+            var num2 = Number(fator2.value)
             var resultado = 0
+            // Verificação de operação
             if(op == 1) {
-                resultado = fator1.value + fator2.value
+                resultado = num1 + num2
                 alert(resultado)
+            } else if(op == 2) {
+                resultado = num1 - num2
+                alert(resultado)
+            } else if(op == 3) {
+                resultado = num1 * num2
+                alert(resultado)
+            } else if((num1 == 0 || num2 == 0) && op == 4) {
+                alert("Erro. Divisão por 0")
+            } else if(op == 4) {
+                resultado = num1 / num2
+                alert(resultado)   
+            } else {
+                alert("Faça um calculo!")
             }
         }
     </script>
