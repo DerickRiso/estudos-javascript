@@ -27,8 +27,7 @@
             flex-direction: column;
             align-items: center;
             margin: auto;
-            margin-top: 40px;
-            
+            margin-top: 40px; 
         }
 
         div {
@@ -58,7 +57,6 @@
             margin: auto;
             margin-top: 10px;
             margin-bottom: 20px;
-            
             font-size: 1em;
             background-color: lightblue;
             border: 1px solid black;
@@ -76,11 +74,11 @@
             <input type="number" id="tempo">
             <button id="calc">Calcular</button>
         </div>
-        
         <p id="res"></p> 
     </section>
 
     <script>
+        // Event Listener
         var calcular = document.getElementById("calc")
         calcular.addEventListener('click', calcVelocidade)
 
@@ -108,8 +106,6 @@
                 document.getElementById("res").innerHTML = null
             } 
         }
-        
-
     </script>
 </body>
 </html>
