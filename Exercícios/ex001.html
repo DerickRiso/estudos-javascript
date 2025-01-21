@@ -18,7 +18,7 @@
         }
 
         section {
-            height: 550px;
+            height: 350px;
             width: 500px;
             border-radius: 20px;
             box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 10px;
@@ -28,18 +28,13 @@
             align-items: center;
             margin: auto;
             margin-top: 40px;
+            
         }
 
         div {
             display: flex;
             flex-direction: column;
-        }
-
-        div#imagem {
-            background-color: greenyellow;
-            width: 300px;
-            height: 300px;
-            border-radius: 30px;
+            gap: 10px
         }
 
         h1 {
@@ -50,25 +45,40 @@
         p {
             font-size: 1.3em;
         }
+
+        input {
+            width: 100px;
+            margin: auto;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            align-items: center;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            
+            font-size: 1em;
+            background-color: lightblue;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <section>
         <h1>Cálculo de velocidade média</h1>
-        <div id="entrada">
-            <p>Insira a distância percorrida</p>
+        <div>
+            <p>Insira a distância percorrida em metros:</p>
             <input type="number" id="dist">
-            <p>Insira o tempo</p>
+            <p>Insira o tempo em segundos:</p>
             <input type="number" id="tempo">
+            <button id="calc">Calcular</button>
         </div>
-        <button id="calc">Calcular</button>
-        <div id="imagem"></div>
-        <p id="res"></p>
         
+        <p id="res"></p> 
     </section>
-    <footer>
-
-    </footer>
 
     <script>
         var calcular = document.getElementById("calc")
@@ -84,8 +94,19 @@
             // Calculo de velocidade média
             var velMedia = distancia / tempo
             var velEmkm = velMedia * 3.6
+
             // Exibição de dados
-            document.getElementById("res").innerHTML = `A velocidade foi ${velMedia} m/s, isso dá ${velEmkm} Km/h!`
+            if (velMedia > 299792458) {
+                document.getElementById("res").innerHTML = `A velocidade foi ${velMedia} m/s, isso dá ${velEmkm} Km/h! Equivale a velocidade da luz propagada no vácuo!`
+            } else {
+                document.getElementById("res").innerHTML = `A velocidade foi ${velMedia} m/s, isso dá ${velEmkm} Km/h!`
+            }
+
+            // Mensagem de erro
+            if (distancia == 0 || tempo == 0) {
+                alert("[ERRO] Insira os dados!")
+                document.getElementById("res").innerHTML = null
+            } 
         }
         
 
