@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            text-align: center;
+        }
+
+        section {
+            height: 550px;
+            width: 500px;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 10px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        div#imagem {
+            background-color: greenyellow;
+            width: 300px;
+            height: 300px;
+            border-radius: 30px;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Cálculo de velocidade média</h1>
+        <div id="entrada">
+            <p>Insira a distância percorrida</p>
+            <input type="number" id="dist">
+            <p>Insira o tempo</p>
+            <input type="number" id="tempo">
+        </div>
+        <button id="calc">Calcular</button>
+        <div id="imagem"></div>
+        <p id="res"></p>
+        
+    </section>
+    <footer>
+
+    </footer>
+
+    <script>
+        var calcular = document.getElementById("calc")
+        calcular.addEventListener('click', calcVelocidade)
+
+        function calcVelocidade() {
+            // Armazenando input em variáveis
+            var distInput = document.getElementById("dist").value
+            var tempInput = document.getElementById("tempo").value
+            var distancia = distInput
+            var tempo = tempInput
+
+            // Calculo de velocidade média
+            var velMedia = distancia / tempo
+            var velEmkm = velMedia * 3.6
+            // Exibição de dados
+            document.getElementById("res").innerHTML = `A velocidade foi ${velMedia} m/s, isso dá ${velEmkm} Km/h!`
+        }
+        
+
+    </script>
+</body>
+</html>
