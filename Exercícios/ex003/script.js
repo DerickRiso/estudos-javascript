@@ -8,9 +8,15 @@ function contagem() {
     var num1 = Number(numInicial.value) 
     var intrvl = Number(intervalo.value)
     var num2 = Number(numFinal.value)
+    const cont = []
 
     for(num1; num1 <= num2 ;num1 += intrvl) {
-        res.innerHTML = `<p>${num1}</p>`
-        res.appendChild.innerHTML = `<p>${num1}</p>`
+        // função push() posiciona item no array
+        cont.push(num1)
     }
+
+    // função join() transforma array em string
+    // console.log(cont.join(", "))
+
+    res.innerHTML = `<p>${cont.join(", ")}</p>`
 }
