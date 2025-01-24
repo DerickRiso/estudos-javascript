@@ -8,27 +8,27 @@
 </head>
 <body>
     <header>
-        <h1>Preencha as informações</h1>
+        <h1>Contador</h1>
     </header>
     
     <section>
         <div>
             <p>
                 <label for="icomeco">Número inicial</label>
-                <input type="Number" id="icomeco">
+                <input type="Number" id="icomeco" required>
             </p>
 
             <p>
                 <label for="iintervalo">Intervalo</label>
-                <input type="Number" id="iintervalo">
+                <input type="Number" id="iintervalo" required>
             </p>
 
             <p>
                 <label for="ifinal">Número final</label>
-                <input type="number" id="ifinal">
+                <input type="number" id="ifinal" required>
             </p>
 
-            <input type="button" value="Enviar" onclick="contagem()">
+            <input type="button" value="Enviar" onclick="contar()">
 
         </div>
         <div id="res">
